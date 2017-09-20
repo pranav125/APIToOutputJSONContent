@@ -1,0 +1,38 @@
+buildscript {
+  repositories {
+    mavenCentral()
+    maven {
+        url "https://plugins.gradle.org/m2/"
+    }
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.2.RELEASE")
+    classpath("com.moowork.gradle:gradle-node-plugin:1.1.1")
+  }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+jar {
+  baseName = 'tou'
+  version =  '0.1.0'
+}
+
+repositories {
+  mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+  compile("org.springframework.boot:spring-boot-starter-web")
+  compile("org.springframework.boot:spring-boot-devtools")
+  compile("joda-time:joda-time")
+  testCompile("org.springframework.boot:spring-boot-starter-test")
+  testCompile 'junit:junit:4.12'
+}
+
+
